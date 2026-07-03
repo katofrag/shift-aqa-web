@@ -21,6 +21,9 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
+
+  snapshotDir: './screenshots/expected',
+  
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -35,10 +38,36 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      // Название проекта для отчётов
+      name: 'Desktop chrome - 1920',
+      // Настройки для этого проекта
+      use: {
+        browserName: 'chromium',         // используем браузер Chromium
+        viewport: { width: 1920, height: 1080 }  // разрешение экрана как у десктопа
+      },
     },
 
+    {
+      name: 'Mobile chrome - 768',
+      use: {
+        browserName: 'chromium',
+        viewport: { width: 768, height: 1080 }     // разрешение мобильного устройства
+      },
+    },
+    
+    {
+      name: 'Mobile chrome - 360',
+      use: {
+        browserName: 'chromium',
+        viewport: { width: 360, height: 1080 }     // разрешение мобильного устройства
+      },
+    },
+    
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+    
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
