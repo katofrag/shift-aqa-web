@@ -7,7 +7,7 @@ if(!baseURL) {
 }
 
 test('Проверка кнопки СладкийДом', async ({page}) => {
-    await page.goto('')
+    await page.goto('calalog')
     await expect.soft(page.getByTestId('header-logo')).toContainText('СладкийДом')
     await expect.soft(page.getByTestId('header-logo')).toHaveAttribute('href', '/')     
     await page.getByTestId('header-logo').click()
@@ -17,7 +17,7 @@ test('Проверка кнопки СладкийДом', async ({page}) => {
 
 
 test('Проверка кнопки Главная', async ({page}) => {
-    await page.goto('')
+    await page.goto('calalog')
     await expect.soft(page.getByTestId('header-nav-link-home')).toHaveText('Главная')    
     await expect.soft(page.getByTestId('header-nav-link-home')).toHaveAttribute('href', '/')    
     await page.getByTestId('header-nav-link-home').click()
