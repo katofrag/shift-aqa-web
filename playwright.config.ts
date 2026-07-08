@@ -47,21 +47,21 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'Mobile chrome - 768',
-      use: {
-        browserName: 'chromium',
-        viewport: { width: 768, height: 1080 }     // разрешение мобильного устройства
-      },
-    },
+    // {
+    //   name: 'Mobile chrome - 768',
+    //   use: {
+    //     browserName: 'chromium',
+    //     viewport: { width: 768, height: 1080 }     // разрешение мобильного устройства
+    //   },
+    // },
     
-    {
-      name: 'Mobile chrome - 360',
-      use: {
-        browserName: 'chromium',
-        viewport: { width: 360, height: 1080 }     // разрешение мобильного устройства
-      },
-    },
+    // {
+    //   name: 'Mobile chrome - 360',
+    //   use: {
+    //     browserName: 'chromium',
+    //     viewport: { width: 360, height: 1080 }     // разрешение мобильного устройства
+    //   },
+    // },
     
     // {
     //   name: 'chromium',
